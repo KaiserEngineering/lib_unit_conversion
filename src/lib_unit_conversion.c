@@ -7,6 +7,30 @@
 
 #include "lib_unit_conversion.h"
 
+float convert_units( PID_UNITS in, PID_UNITS out, float value )
+{
+    if( (in == PID_UNITS_FAHRENHEIT) && (out == PID_UNITS_CELCIUS) )
+        return fahrenheit_to_celcuis( value );
+
+    else if( (in == PID_UNITS_CELCIUS) && (out == PID_UNITS_FAHRENHEIT) )
+            return celcuis_to_fahrenheit( value );
+
+    else if( (in == PID_UNITS_KMH) && (out == PID_UNITS_MPH) )
+            return kmh_to_mph( value );
+
+    else if( (in == PID_UNITS_MPH) && (out == PID_UNITS_KMH) )
+            return mph_to_kmh( value );
+
+    else if( (in == PID_UNITS_KPA) && (out == PID_UNITS_PSI) )
+            return kpa_to_psi( value );
+
+    else if( (in == PID_UNITS_PSI) && (out == PID_UNITS_KPA) )
+            return psi_to_kpa( value );
+
+    else
+        return value;
+}
+
 float fahrenheit_to_celcuis( float fahrenheit )
 {
     return (fahrenheit - (float)32.00) * ((float)5.00 / (float)9.00);
