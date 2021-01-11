@@ -7,28 +7,41 @@
 
 #include "lib_unit_conversion.h"
 
-float convert_units( PID_UNITS in, PID_UNITS out, float value )
+PID_UNITS convert_units( PID_UNITS unitsIn, PID_UNITS unitsOut, float *value )
 {
-    if( (in == PID_UNITS_FAHRENHEIT) && (out == PID_UNITS_CELCIUS) )
-        return fahrenheit_to_celcuis( value );
+    if( (unitsIn == PID_UNITS_FAHRENHEIT) && (unitsOut == PID_UNITS_CELCIUS) ) {
+        *value = fahrenheit_to_celcuis( *value );
+        return unitsOut;
+    }
 
-    else if( (in == PID_UNITS_CELCIUS) && (out == PID_UNITS_FAHRENHEIT) )
-            return celcuis_to_fahrenheit( value );
+    else if( (unitsIn == PID_UNITS_CELCIUS) && (unitsOut == PID_UNITS_FAHRENHEIT) ) {
+        *value = celcuis_to_fahrenheit( *value );
+        return unitsOut;
+    }
 
-    else if( (in == PID_UNITS_KMH) && (out == PID_UNITS_MPH) )
-            return kmh_to_mph( value );
+    else if( (unitsIn == PID_UNITS_KMH) && (unitsOut == PID_UNITS_MPH) ) {
+        *value = kmh_to_mph( *value );
+        return unitsOut;
+    }
 
-    else if( (in == PID_UNITS_MPH) && (out == PID_UNITS_KMH) )
-            return mph_to_kmh( value );
+    else if( (unitsIn == PID_UNITS_MPH) && (unitsOut == PID_UNITS_KMH) ) {
+        *value = mph_to_kmh( *value );
+        return unitsOut;
+    }
 
-    else if( (in == PID_UNITS_KPA) && (out == PID_UNITS_PSI) )
-            return kpa_to_psi( value );
+    else if( (unitsIn == PID_UNITS_KPA) && (unitsOut == PID_UNITS_PSI) ) {
+        *value = kpa_to_psi( *value );
+        return unitsOut;
+    }
 
-    else if( (in == PID_UNITS_PSI) && (out == PID_UNITS_KPA) )
-            return psi_to_kpa( value );
+    else if( (unitsIn == PID_UNITS_PSI) && (unitsOut == PID_UNITS_KPA) ) {
+        *value = psi_to_kpa( *value );
+        return unitsOut;
+    }
 
-    else
-        return value;
+    else {
+        return unitsIn;
+    }
 }
 
 float fahrenheit_to_celcuis( float fahrenheit )
