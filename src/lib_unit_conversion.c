@@ -34,8 +34,19 @@ PID_UNITS convert_units( PID_UNITS unitsIn, PID_UNITS unitsOut, float *value )
         return unitsOut;
     }
 
+    else if( (unitsIn == PID_UNITS_KPA) && (unitsOut == PID_UNITS_BAR) ) {
+        *value = kpa_to_bar( *value );
+        return unitsOut;
+    }
+
     else if( (unitsIn == PID_UNITS_PSI) && (unitsOut == PID_UNITS_KPA) ) {
         *value = psi_to_kpa( *value );
+        return unitsOut;
+    }
+
+    else if( (unitsIn == PID_UNITS_PSI) && (unitsOut == PID_UNITS_BAR) ) {
+        *value = psi_to_kpa( *value );
+        *value = kpa_to_bar( *value );
         return unitsOut;
     }
 
@@ -64,7 +75,12 @@ float mph_to_kmh( float mph )
     return mph * MPH_TO_KPH_FACTOR;
 }
 
-float kpa_to_psi( float kpa)
+float kpa_to_psi( float kpa )
+{
+    return kpa * KPA_TO_PSI_FACTOR;
+}
+
+float kpa_to_bar( float kpa )
 {
     return kpa * KPA_TO_PSI_FACTOR;
 }
@@ -73,3 +89,4 @@ float psi_to_kpa( float psi )
 {
     return psi / KPA_TO_PSI_FACTOR;
 }
+

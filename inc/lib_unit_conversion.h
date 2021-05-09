@@ -33,18 +33,21 @@
         PID_UNITS_SECONDS,
         PID_UNITS_RATIO,
         PID_UNITS_LPH,
+        PID_UNITS_BAR,
     } PID_UNITS, *PPID_UNITS;
 #endif
 
 #define MPH_TO_KPH_FACTOR (float)1.6093440
 #define KPA_TO_PSI_FACTOR (float)0.1450377
+#define KPA_TO_BAR_FACTOR (float)0.01
 
 PID_UNITS convert_units( PID_UNITS in, PID_UNITS out, float *value );
 float fahrenheit_to_celcuis( float fahrenheit );
 float celcuis_to_fahrenheit( float celcuis );
 float kmh_to_mph( float kmh );
 float mph_to_kmh( float mph );
-float kpa_to_psi( float kpa);
+float kpa_to_psi( float kpa );
+float kpa_to_bar( float kpa );
 float psi_to_kpa( float psi );
 
 #endif /* LIB_UNIT_CONVERSION_H_ */
