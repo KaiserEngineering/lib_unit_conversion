@@ -18,7 +18,7 @@
     typedef enum _pid_units {
         PID_UNITS_NOT_APPLICABLE,
         PID_UNITS_PERCENT,
-        PID_UNITS_CELCIUS,
+        PID_UNITS_CELSIUS,
         PID_UNITS_FAHRENHEIT,
         PID_UNITS_KPA,
         PID_UNITS_PSI,
@@ -42,8 +42,8 @@
 #define KPA_TO_BAR_FACTOR (float)0.01
 
 PID_UNITS convert_units( PID_UNITS in, PID_UNITS out, float *value );
-float fahrenheit_to_celcuis( float fahrenheit );
-float celcuis_to_fahrenheit( float celcuis );
+float fahrenheit_to_celsuis( float fahrenheit );
+float celsuis_to_fahrenheit( float celsuis );
 float kmh_to_mph( float kmh );
 float mph_to_kmh( float mph );
 float kpa_to_psi( float kpa );

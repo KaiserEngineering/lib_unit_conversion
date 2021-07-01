@@ -10,23 +10,23 @@ void tearDown( void )
 {
 }
 
-void test_fahrenheit_to_celcuis( void )
+void test_fahrenheit_to_celsuis( void )
 {
-    float celcuis [6] = { -40, -15, 0, 15, 40, 225 };
+    float celsuis [6] = { -40, -15, 0, 15, 40, 225 };
     float fahrenheit [6] = { -40, 5, 32, 59, 104, 437 };
-    for(int i = 0; i < sizeof(celcuis)/sizeof(celcuis[0]); i++)
+    for(int i = 0; i < sizeof(celsuis)/sizeof(celsuis[0]); i++)
     {
-        TEST_ASSERT_EQUAL_FLOAT( celcuis[i] , fahrenheit_to_celcuis( fahrenheit[i] ) );
+        TEST_ASSERT_EQUAL_FLOAT( celsuis[i] , fahrenheit_to_celsuis( fahrenheit[i] ) );
     }
 }
 
-void test_celcuis_to_fahrenheit( void )
+void test_celsuis_to_fahrenheit( void )
 {
-    float celcuis [6] = { -40, -15, 0, 15, 40, 225 };
+    float celsuis [6] = { -40, -15, 0, 15, 40, 225 };
     float fahrenheit [6] = { -40, 5, 32, 59, 104, 437 };
-    for(int i = 0; i < sizeof(celcuis)/sizeof(celcuis[0]); i++)
+    for(int i = 0; i < sizeof(celsuis)/sizeof(celsuis[0]); i++)
     {
-        TEST_ASSERT_EQUAL_FLOAT( fahrenheit[i] , celcuis_to_fahrenheit( celcuis[i] ) );
+        TEST_ASSERT_EQUAL_FLOAT( fahrenheit[i] , celsuis_to_fahrenheit( celsuis[i] ) );
     }
 }
 
@@ -70,23 +70,23 @@ void test_psi_to_kpa( void )
     }
 }
 
-void test_convert_units_fahrenheit_to_celcuis( void )
+void test_convert_units_fahrenheit_to_celsuis( void )
 {
-    float celcuis [6] = { -40, -15, 0, 15, 40, 225 };
+    float celsuis [6] = { -40, -15, 0, 15, 40, 225 };
     float fahrenheit [6] = { -40, 5, 32, 59, 104, 437 };
-    for(int i = 0; i < sizeof(celcuis)/sizeof(celcuis[0]); i++)
+    for(int i = 0; i < sizeof(celsuis)/sizeof(celsuis[0]); i++)
     {
-        TEST_ASSERT_EQUAL_FLOAT( celcuis[i] , convert_units( PID_UNITS_FAHRENHEIT, PID_UNITS_CELCIUS, fahrenheit[i] ) );
+        TEST_ASSERT_EQUAL_FLOAT( celsuis[i] , convert_units( PID_UNITS_FAHRENHEIT, PID_UNITS_CELSIUS, fahrenheit[i] ) );
     }
 }
 
-void test_convert_units_celcuis_to_fahrenheit( void )
+void test_convert_units_celsuis_to_fahrenheit( void )
 {
-    float celcuis [6] = { -40, -15, 0, 15, 40, 225 };
+    float celsuis [6] = { -40, -15, 0, 15, 40, 225 };
     float fahrenheit [6] = { -40, 5, 32, 59, 104, 437 };
-    for(int i = 0; i < sizeof(celcuis)/sizeof(celcuis[0]); i++)
+    for(int i = 0; i < sizeof(celsuis)/sizeof(celsuis[0]); i++)
     {
-        TEST_ASSERT_EQUAL_FLOAT( fahrenheit[i] , convert_units( PID_UNITS_CELCIUS, PID_UNITS_FAHRENHEIT, celcuis[i] ) );
+        TEST_ASSERT_EQUAL_FLOAT( fahrenheit[i] , convert_units( PID_UNITS_CELSIUS, PID_UNITS_FAHRENHEIT, celsuis[i] ) );
     }
 }
 
