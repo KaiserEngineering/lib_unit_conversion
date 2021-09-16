@@ -9,13 +9,13 @@
 
 PID_UNITS convert_units( PID_UNITS unitsIn, PID_UNITS unitsOut, float *value )
 {
-    if( (unitsIn == PID_UNITS_FAHRENHEIT) && (unitsOut == PID_UNITS_CELCIUS) ) {
-        *value = fahrenheit_to_celcuis( *value );
+    if( (unitsIn == PID_UNITS_FAHRENHEIT) && (unitsOut == PID_UNITS_CELSIUS) ) {
+        *value = fahrenheit_to_celsuis( *value );
         return unitsOut;
     }
 
-    else if( (unitsIn == PID_UNITS_CELCIUS) && (unitsOut == PID_UNITS_FAHRENHEIT) ) {
-        *value = celcuis_to_fahrenheit( *value );
+    else if( (unitsIn == PID_UNITS_CELSIUS) && (unitsOut == PID_UNITS_FAHRENHEIT) ) {
+        *value = celsuis_to_fahrenheit( *value );
         return unitsOut;
     }
 
@@ -55,14 +55,14 @@ PID_UNITS convert_units( PID_UNITS unitsIn, PID_UNITS unitsOut, float *value )
     }
 }
 
-float fahrenheit_to_celcuis( float fahrenheit )
+float fahrenheit_to_celsuis( float fahrenheit )
 {
     return (fahrenheit - (float)32.00) * ((float)5.00 / (float)9.00);
 }
 
-float celcuis_to_fahrenheit( float celcuis )
+float celsuis_to_fahrenheit( float celsuis )
 {
-    return (celcuis * ((float)9.00 / (float)5.00)) + (float)32.00;
+    return (celsuis * ((float)9.00 / (float)5.00)) + (float)32.00;
 }
 
 float kmh_to_mph( float kmh )
