@@ -82,7 +82,7 @@ float kpa_to_psi( float kpa )
 
 float kpa_to_bar( float kpa )
 {
-    return kpa * KPA_TO_PSI_FACTOR;
+    return kpa * KPA_TO_BAR_FACTOR;
 }
 
 float psi_to_kpa( float psi )
