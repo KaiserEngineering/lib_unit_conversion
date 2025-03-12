@@ -12,7 +12,7 @@
  * Use lib_pid to get the units, if it is not part of the project
  * then define the units in lib_unit_conversion.
  */
-#ifdef PID_H_
+#if USE_LIB_PID
 #include "lib_pid.h"
 #else
     typedef enum _pid_units {
