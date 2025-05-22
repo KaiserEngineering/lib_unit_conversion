@@ -41,7 +41,7 @@
 #define KPA_TO_PSI_FACTOR (float)0.1450377
 #define KPA_TO_BAR_FACTOR (float)0.01
 
-PID_UNITS convert_units( PID_UNITS in, PID_UNITS out, float *value );
+PID_UNITS convert_units( PID_UNITS unitsIn, PID_UNITS unitsOut, float *value );
 float fahrenheit_to_celsuis( float fahrenheit );
 float celsuis_to_fahrenheit( float celsuis );
 float kmh_to_mph( float kmh );
